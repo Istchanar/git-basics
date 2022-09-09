@@ -14,8 +14,11 @@ jobs:
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - run: | 
+          echo ${{ github.actor }}
+          echo API_TOKEN_GITHUB
         with:
           source_file: 'git-basics.md'
           destination_repo: 'Istchanar/git-basics-pages'
           destination_branch: 'git-basics'
-          user_name: ${{ secrets.USER_GITHUB }}
+          user_name: ${{ github.actor }}
