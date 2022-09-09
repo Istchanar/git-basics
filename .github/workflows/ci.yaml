@@ -18,4 +18,4 @@ jobs:
           source_file: 'git-basics.md'
           destination_repo: 'Istchanar/git-basics-pages'
           destination_branch: 'git-basics'
-          user_name: ${{ github.actor }}
+          user_name: ${{ secrets.USER_GITHUB }}
