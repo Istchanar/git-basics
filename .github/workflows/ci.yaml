@@ -10,9 +10,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: echo ${{ secrets.API_TOKEN_GITHUB }}
       - name: Send file
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        
+        with:
+          source_file: 'git-basics.md'
+          destination_repo: 'Istchanar/git-basics-pages'
+          destination_branch: 'git-basics'
+          user_name: ${{ github.actor }}
