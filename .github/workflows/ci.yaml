@@ -15,7 +15,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'git-basics.md'
+          source_file: 'index.md'
           destination_repo: 'Istchanar/git-basics-pages'
           destination_branch: 'git-basics'
           user_name: ${{ github.actor }}
