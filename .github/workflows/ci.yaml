@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  prettier: 
+  prettier:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -13,17 +13,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }} 111111111
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}``````````````````````````````````
+          node-version: ${{ matrix.node-version }}
       - name: Install and check
         run: |
           npm install
           npm run prettier:check-all
-       
+
   github-pages:
-    needs:  prettier
+    needs: prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,7 +33,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'index.md'
-          destination_repo: 'Istchanar/git-basics-pages'
-          destination_branch: 'git-basics'
+          source_file: "index.md"
+          destination_repo: "Istchanar/git-basics-pages"
+          destination_branch: "git-basics"
           user_name: ${{ github.actor }}

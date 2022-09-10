@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "prettier:check-all": "npx prettier --check ."
+    "prettier:check-all": "npx prettier --check .",
+    "prettier:write": "npx prettier --write ."
   },
   "devDependencies": {
     "prettier": "2.7.1"
