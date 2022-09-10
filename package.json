@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "prettier:check-all": "npx prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
+  }
+}

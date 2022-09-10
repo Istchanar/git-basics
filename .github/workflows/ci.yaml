@@ -5,7 +5,25 @@ on:
     branches: [main]
 
 jobs:
+  prettier: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }} # Установим ноду
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install, build, test # Выполняем необходимые команды
+        run: |
+          npm install
+          npm run prettier:check-all
+       
   github-pages:
+    needs:  prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
